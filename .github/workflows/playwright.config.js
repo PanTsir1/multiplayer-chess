@@ -1,8 +1,9 @@
-// Optional: custom config
-module.exports = {
-  timeout: 60000,
+import { defineConfig } from '@playwright/test';
+
+export default defineConfig({
+  testDir: './tests',
   use: {
-    headless: true,
-    viewport: { width: 1280, height: 720 }
-  }
-};
+    baseURL: 'https://chessfantazy.com',
+    headless: false, // Set to true for CI
+  },
+});
